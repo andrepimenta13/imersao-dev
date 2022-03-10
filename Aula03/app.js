@@ -1,5 +1,5 @@
 let numeroSecreto = Math.floor(Math.random() * 11); //podiamos fazer de outra forma: parseInt(Math.random() * 11)
-let tentativasMax = 5;
+let tentativasMax = 3;
 let tentativas = 0;
 
 const Chutar = () => {
