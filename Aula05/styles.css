@@ -34,12 +34,21 @@ a .container {
     right: 10px;
 }
 
+#listaFilmes {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 #listaFilmes img {
     margin: 10px;
     max-height: 250px;
 }
 
-#listaFilmes p {
+#listaFilmes label {
     color: white;
     font-size: 30px;
     margin-top: 5px;
