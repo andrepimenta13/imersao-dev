@@ -41,3 +41,16 @@ body>img {
 img {
     max-height: 250px;
 }
+
+.movies-img {
+    max-height: 250px;
+    padding: 50px;
+    margin: 10px;
+    align-items: center;
+}
+
+.movies-input {
+    padding: 70px;
+    padding-top: 50px;
+    margin: auto;
+}
