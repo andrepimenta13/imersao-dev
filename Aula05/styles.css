@@ -39,14 +39,20 @@ a .container {
     max-height: 250px;
 }
 
+#listaFilmes p {
+    color: white;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
 .form-wrapper {
     margin: 0 0 15px;
 }
 
 .form-wrapper input {
     display: block;
-    margin: 0 auto;
-    padding: 10px 25px;
+    margin: 10px auto;
+    padding: 15px 25px;
 }
 
 .form-wrapper button {
