@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.container {
+a .container {
     text-align: center;
     padding: 20px;
 }
@@ -34,29 +34,22 @@ body {
     right: 10px;
 }
 
-body>img {
-    margin: 0 10px;
-}
-
-img {
-    max-height: 250px;
-}
-
-.movies-img {
-    max-height: 250px;
-    padding: 50px;
+#listaFilmes img {
     margin: 10px;
-    align-items: center;
+    max-height: 250px;
 }
 
-.movies-input input {
+.form-wrapper {
+    margin: 0 0 15px;
+}
+
+.form-wrapper input {
     display: block;
     margin: 0 auto;
-    padding: 10px 55px;
-    width: 200px;
+    padding: 10px 25px;
 }
 
-.movies-input button {
+.form-wrapper button {
     border: 0;
     color: #ffffff;
     background: #da1e26;
@@ -67,4 +60,8 @@ img {
     margin-top: 20px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.form-wrapper button:hover {
+    opacity: 0.8;
 }

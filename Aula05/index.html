@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Imersão Dev - Aula 05</title>
 </head>
 
 <body>
@@ -16,16 +16,18 @@
         </h1>
         <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo"
             alt="">
+        <p class="page-subtitle">
+            Qual seu filme favorito?
+        </p>
+        <div class="form-wrapper">
+            <input type="text" id="filme" name="filme" placeholder="Insira endereço de imagem">
+            <button onClick="adicionarFilme()">Adicionar Filme</button>
+        </div>
     </div>
-    <div class="movies-input">
-        <input type="text" name="Movies" id="movies-names" placeholder="Insira aqui endereço do seu filme!">
-        <button type="submit" id="movies-button" onclick="Submit()">Submeter</button>
-    </div>
+    <div id="listaFilmes"></div>
     <a href="https://alura.com.br/" target="_blank">
         <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
     </a>
-    <div id="movies-container"></div>
-
     <script src="script.js"></script>
 </body>
 

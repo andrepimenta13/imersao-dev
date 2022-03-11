@@ -1,7 +1,6 @@
 let moviesArray = []
 
 const Submit = () => {
-    var moviesElement = document.getElementById('movies-names');
     var moviesValue = document.getElementById('movies-names').value;
 
     if (moviesArray.includes(moviesValue)) {
