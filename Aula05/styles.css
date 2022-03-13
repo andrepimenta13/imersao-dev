@@ -34,7 +34,7 @@ a .container {
     right: 10px;
 }
 
-#listaFilmes {
+#movieList {
     display: flex;
     flex-direction: row;
     padding: 50px;
@@ -43,12 +43,12 @@ a .container {
     align-items: center;
 }
 
-#listaFilmes img {
+#movieList img {
     margin: 10px;
     max-height: 250px;
 }
 
-#listaFilmes label {
+#movieList label {
     color: white;
     font-size: 30px;
     margin-top: 5px;

@@ -1,6 +1,6 @@
 /*
  * TODO:
- * - [] Além de colocar a imagem do filme, também adicionar o nome por meio de outro input
+ * - [x] Além de colocar a imagem do filme, também adicionar o nome por meio de outro input
  * - [] Guardar todos os filmes adicionados em uma lista/array e percorrer essa lista toda vez que quiser imprimir ou remover o filme
  * - [] Criar um botão para remover um filme na tela através do mesmo endereço;
 
@@ -9,48 +9,58 @@
 let moviesArray = [];
 let moviesNames = [];
 
-const adicionarFilme = () => {
+const addMovie = () => {
 
-    let filmeFavorito = document.getElementById('filme').value;
-    let nomeFilme = document.getElementById('nomeFilme').value;
+    let favoriteMovie = document.getElementById('movieAddress').value;
+    let movieName = document.getElementById('movieName').value;
 
-    if (moviesArray.includes(filmeFavorito)) {
-        alert('Este filme é repetido!');
-        document.getElementById('filme').value = "";
-    } else if (nomeFilme == '' || filmeFavorito == '') {
-        console.error('Deve preencher o endereço da imagem e o seu nome!');
-        alert('Deve preencher o endereço da imagem e o seu nome!');
-    } else if (filmeFavorito.endsWith(".jpg") || filmeFavorito.endsWith(".jpeg")) { //validar se a string termina com .jpeg
-        listarFilmesNaTela(filmeFavorito, nomeFilme);
+    if (moviesArray.includes(favoriteMovie)) {
+        alert('This movie was already added.');
+        document.getElementById('movieAddress').value = "";
+    } else if (movieName == '' || favoriteMovie == '') {
+        console.error('It is mandatory to fill in the image address and movies name fields!');
+        alert('It is mandatory to fill in the image address and movies name fields');
+    } else if (favoriteMovie.endsWith(".jpg") || favoriteMovie.endsWith(".jpeg")) { //validar se a string termina com .jpeg
+        showMoviesOnScreen(favoriteMovie, movieName);
     } else {
-        console.error('Endereço de filme inválido!');
-        alert('Endereço de filme inválido!');
+        console.error('The movie address is invalid');
+        alert('The movie address is invalid');
     }
-    document.getElementById('filme').value = '';
-    document.getElementById('nomeFilme').value = '';
+    document.getElementById('movieAddress').value = '';
+    document.getElementById('movieName').value = '';
 }
 
-const listarFilmesNaTela = (filme, nomeFilme) => {
+const showMoviesOnScreen = (filme, movieName) => {
     moviesArray.push(filme);
-    moviesNames.push(nomeFilme);
+    moviesNames.push(movieName);
     const image = document.createElement("img");
     const name = document.createElement('label');
     image.setAttribute('src', filme);
-    name.innerHTML = nomeFilme;
-    const movieContainer = document.getElementById('listaFilmes');
+    image.setAttribute('id', moviesArray.length - 1);
+    name.setAttribute('id', "name" + (moviesArray.length - 1));
+    name.innerHTML = movieName;
+    const movieContainer = document.getElementById('movieList');
     movieContainer.appendChild(image);
     movieContainer.appendChild(name);
 }
 
-const removerFilme = () => {
-    let elementoListaFilmes = document.getElementById('listaFilmes');
+const removeMovie = () => {
 
-    if (elementoListaFilmes.hasChildNodes()) {
-        elementoListaFilmes.removeChild(elementoListaFilmes.lastElementChild);
-        elementoListaFilmes.removeChild(elementoListaFilmes.lastElementChild); //que trolhice, melhora isso!
-        moviesArray.pop();
-        moviesNames.pop();
+    if (moviesArray.length == 0) {
+        alert('No one movie to remove!')
+        return
+    }
+    let remove = prompt("What is the movie address to remove?");
+
+    var indexToRemove = moviesArray.indexOf(remove);
+    if (indexToRemove == -1) {
+        alert("You have inserted an invalid movie address or that address doesn't exist.")
     } else {
-        alert('Não existem mais filmes para apagar!')
+        let movieAddressToRemove = document.getElementById(indexToRemove)
+        movieAddressToRemove.remove();
+        moviesArray[indexToRemove] = "";
+        let name = document.getElementById('name' + indexToRemove)
+        name.remove();
+        moviesNames[indexToRemove] = "";
     }
 }
